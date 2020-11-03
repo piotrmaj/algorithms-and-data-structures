@@ -21,25 +21,24 @@ namespace QuickSort
 
         private static void QuickSort(int[] values, int start, int end)
         {
-            //for (int i = 0; i < values.Length; i++)
-            //{
-            //    var midElement = values.Length / 2;
-
-            //    if(values[i] < midElement)
-
-            //}
-            if(start >= end)
+            if (start >= end)
             {
                 return;
             }
 
-            var a = values.Skip(start).Take(end - start + 1).ToArray();
+            int j = Partition(values, start, end);
 
+            QuickSort(values, start, j - 1);
+            QuickSort(values, j + 1, end);
+        }
+
+        private static int Partition(int[] values, int start, int end)
+        {
             var pivot = values[end];
             int j = start;
-            for(int i = start; i < end; i++)
+            for (int i = start; i < end; i++)
             {
-                if(values[i] < pivot)
+                if (values[i] < pivot)
                 {
                     var temp1 = values[j];
                     values[j] = values[i];
@@ -50,10 +49,7 @@ namespace QuickSort
             var temp = values[j];
             values[j] = pivot;
             values[end] = temp;
-
-            var b = values.Skip(start).Take(end - start + 1).ToArray();
-            QuickSort(values, start, j - 1);
-            QuickSort(values, j + 1, end);
+            return j;
         }
     }
 }
