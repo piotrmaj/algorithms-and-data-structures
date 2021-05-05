@@ -35,8 +35,14 @@ namespace NumberToLCD
                 case 1: return new LCDElem(false, false, true, false, false, true, false);
                 case 2: return new LCDElem(true, false, true, true, true, false, true);
                 case 3: return new LCDElem(true, false, true, true, false, true, true);
+                case 4: return new LCDElem(false, true, true, true, false, true, false);
+                case 5: return new LCDElem(true, true, false, true, false, true, true);
+                case 6: return new LCDElem(true, true, false, true, true, true, true);
+                case 7: return new LCDElem(true, false, true, false, false, true, false);
+                case 8: return new LCDElem(true, true, true, true, true, true, true);
+                case 9: return new LCDElem(true, true, true, true, false, true, true);
             }
-            return null;
+            throw new NotImplementedException();
         }
     }
 }

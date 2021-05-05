@@ -6,7 +6,8 @@ namespace NumberToLCD
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.Write(LCD.ToString(456, 2, 2));
+            Console.ReadKey();
         }
     }
 }
