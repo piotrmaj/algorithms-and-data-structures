@@ -11,7 +11,9 @@ namespace TwoWordAnagram
     {
         static void Main(string[] args)
         {
-            var testDataPath = Path.Combine(Directory.GetParent(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)).Parent.Parent.Parent.ToString(), "wordlist.txt");
+            var solutionPath = Directory.GetParent(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location))
+                .Parent.Parent.Parent.ToString();
+            var testDataPath = Path.Combine(solutionPath, "wordlist.txt");
 
             var results = FindAnagrams(testDataPath);
 
