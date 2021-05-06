@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwoWordAnagram", "TwoWordAnagram\TwoWordAnagram.csproj", "{8A4A3499-2BD1-49EE-9967-1B6B94DBB062}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwoWordAnagram.Test", "TwoWordAnagram.Test\TwoWordAnagram.Test.csproj", "{33306A6C-0AEC-48D6-A5F7-E3A6ECE64271}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8A4A3499-2BD1-49EE-9967-1B6B94DBB062}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A4A3499-2BD1-49EE-9967-1B6B94DBB062}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A4A3499-2BD1-49EE-9967-1B6B94DBB062}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A4A3499-2BD1-49EE-9967-1B6B94DBB062}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33306A6C-0AEC-48D6-A5F7-E3A6ECE64271}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33306A6C-0AEC-48D6-A5F7-E3A6ECE64271}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33306A6C-0AEC-48D6-A5F7-E3A6ECE64271}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33306A6C-0AEC-48D6-A5F7-E3A6ECE64271}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D6CF5011-01E9-43D9-BAA9-B74D03002F75}
+	EndGlobalSection
+EndGlobal
