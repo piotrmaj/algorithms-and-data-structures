@@ -4,41 +4,47 @@ namespace Bowling
 {
     public class ScoreCalculator
     {
+        private static int SequenceCount = 10;
+
         public int Calculate(List<GameSequence> input)
         {
             var score = 0;
-            for (int i = 9; i >= 0 ; i--)
+            for (int i = SequenceCount - 1; i >= 0 ; i--)
             {
                 var nextTwoRollsScore = 0;
-                var nextRollScore = (i == input.Count - 1) ? (int)input[i].Val3 : (int)input[i + 1].Val1;
+                var isLastElement = i == input.Count - 1;
+                var currentPair = input[i];
+                var nextPair = !isLastElement ? input[i + 1] : null;
+                var nextRollScore = !isLastElement ? (int)nextPair.Val1 : (int)currentPair.Val3;
 
-                if (i == input.Count - 2)
+                var isSecondLastElement = i == input.Count - 2;
+                if (isSecondLastElement)
                 {
-                    nextTwoRollsScore += nextRollScore + (int)input[i + 1].Val2;
+                    nextTwoRollsScore += nextRollScore + (int)nextPair.Val2;
                 } else if (i < input.Count - 2)
                 {
-                    if (input[i + 1].Val1 == RollValue.Strike)
+                    if (nextPair.Val1 == RollValue.Strike)
                     {
                         nextTwoRollsScore += nextRollScore + (int)input[i + 2].Val1;
                     }
                     else
                     {
-                        nextTwoRollsScore += nextRollScore + (int)input[i + 1].Val2;
+                        nextTwoRollsScore += nextRollScore + (int)nextPair.Val2;
                     }
                 }
 
-                if (input[i].Val1 == RollValue.Strike)
+                if (currentPair.Val1 == RollValue.Strike)
                 {
-                    score += (int)input[i].Val1;
+                    score += (int)RollValue.Strike;
                     score += nextTwoRollsScore;
                 } else if (input[i].Val2 == RollValue.Spare)
                 {
-                    score += (int)input[i].Val2;
+                    score += (int)RollValue.Spare;
                     score += nextRollScore;
                 }
                 else
                 {
-                    score += (int)input[i].Val1 + (int)input[i].Val2;
+                    score += (int)currentPair.Val1 + (int)currentPair.Val2;
                 }
             }
             return score;
